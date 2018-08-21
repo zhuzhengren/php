@@ -88,7 +88,6 @@ function test_input($data)
 
 <h2>PHP 表单验证实例</h2>
 <p><span class="error">* 必需字段。</span></p>
-
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
    名字: <input type="text" name="name" value="<?php echo $name;?>">
    <span class="error">* <?php echo $nameErr;?></span>
