@@ -90,7 +90,7 @@ function test_input($data){
 <form method="post" action="
 <?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 
-名字：<input type = "text" name="name" value="<?php echo $name>;?>">
+名字：<input type = "text" name="name" value="<?php echo $name;?>">
 <span class ="error">* <?php echo $nameErr;?></span>
 <br><br>
 E-mail: <input type="text" name="email" value="<?php echo $email;?>">
