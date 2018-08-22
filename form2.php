@@ -89,11 +89,23 @@ function test_input($data)
 <h2>PHP 表单验证实例</h2>
 <p><span class="error">* 必需字段。</span></p>
 
+<<<<<<< HEAD
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
    名字: <input type="text" name="name" value="<?php echo $name;?>">
    <span class="error">* <?php echo $nameErr;?></span>
    <br><br>
    E-mail: <input type="text" name="email" value="<?php echo $email;?>">
+=======
+<h2> PHP 表单验证实例</h2>
+<p><span class ="error">*必须字段.</span></p>
+<form method="post" action="
+<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+
+名字：<input type = "text" name="name" value="<?php echo $name;?>">
+<span class ="error">* <?php echo $nameErr;?></span>
+<br><br>
+E-mail: <input type="text" name="email" value="<?php echo $email;?>">
+>>>>>>> a5fc164f82338cbc4c7b949702ca26a43129f031
    <span class="error">* <?php echo $emailErr;?></span>
    <br><br>
    网址: <input type="text" name="website" value="<?php echo $website;?>">
