@@ -1,0 +1,43 @@
+<html>
+    <title>Select a CD</title>
+    <script>
+        function selectCD(str){
+            if(str==""){
+                document.getElementById("CD").innerHTML="";
+            }
+            if (window.XMLHttpRequest)
+                {
+                    // IE7+, Firefox, Chrome, Opera, Safari 浏览器执行的代码
+                    xmlhttp=new XMLHttpRequest();
+                }
+                else
+                {    
+                    //IE6, IE5 浏览器执行的代码
+                     xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                 }
+                xmlhttp.onreadystatechange=function()
+                {
+                    if (xmlhttp.readyState==4 && xmlhttp.status==200)
+                    {
+                        document.getElementById("hintCD").innerHTML=xmlhttp.responseText;
+                    }
+                }
+                xmlhttp.open("GET","getcd.php?q="+str,true);
+                xmlhttp.send();
+            
+        }
+            
+    </script>
+    <body>
+        <form>
+            <select name="cd" onchange=selectCD(this.value)>
+            <option value="">Select a CD</option>
+            <option value="Bob Dylan">Bob Dylan</option>
+            <option value="Bee Gees">Bee Gees</option>
+            <option value="Cat Stevens">Cat Stevens</option>
+        </select>
+        </form>
+        <br>
+        <div id="hintCD">CD info will be listed here...</div>
+    </body>
+</html>
