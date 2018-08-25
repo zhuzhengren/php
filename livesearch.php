@@ -4,13 +4,13 @@ $str = $_GET["q"];
 $hint = "";
 foreach($xml->link as $link){
     if(strpos($link->title,$str)){
-        $hint=$hint."<a href=".$link->title." target = '_black'</a> <br>"
+        $hint=$hint.'<a href="'.$link->url.' "target = "_black" >'.$link->title.' </a> <br>';
     }
 }
 if($hint==""){
-    return "no suggestion";
+    echo "no suggestion";
 }
 else {
-    return $hint;
+    echo $hint;
 }
 ?>
