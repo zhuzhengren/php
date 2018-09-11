@@ -1,5 +1,6 @@
 <html>
     <title>Select a CD</title>
+    
     <script>
         function selectCD(str){
             if(str==""){
@@ -29,6 +30,7 @@
             
     </script>
     <body>
+       <span><img src="./VerificationCode.class.php" onclick="this.src"></span>
         <form>
             <select name="cd" onchange=selectCD(this.value)>
             <option value="">Select a CD</option>
