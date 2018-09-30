@@ -11,8 +11,7 @@ if (isset($_REQUEST['email'])) { // 如果接收到邮箱参数则发送邮件
     $email = $_REQUEST['email'] ;
     $subject = $_REQUEST['subject'] ;
     $message = $_REQUEST['message'] ;
-    mail("874347989@qq.com", $subject,
-    $message, "From:" . $email);
+    mail($email, $subject, $message, "From: zhuzhengren" );
     echo "邮件发送成功";
 } else { // 如果没有邮箱参数则显示表单
     echo "<form method='post' action='mail.php'>
