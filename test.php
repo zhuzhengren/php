@@ -1,4 +1,56 @@
 <?php 
+
+$arr = array(
+    'subject'=>'课程',
+    'loginName'=>'Durriya',
+    'password'=>'123'
+);
+
+//json也可以
+$data_string =  json_encode($arr);
+//普通数组也行
+//$data_string = $arr;
+
+echo $data_string;
+//echo '<br>';
+
+//curl验证成功
+$ch = curl_init("http://test.api.com/");
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+curl_setopt($ch, CURLOPT_POSTFIELDS,$data_string);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+    'Content-Type: application/json',
+    'Content-Length: ' . strlen($data_string)
+));
+
+$result = curl_exec($ch);
+if (curl_errno($ch)) {
+    print curl_error($ch);
+}
+curl_close($ch);
+echo $result;
+
+
+$FILENAME = '/Users/zzr/Desktop/workspace/htdocs/application/wx/common/City.json';
+        if(file_exists($FILENAME)){
+            $fp = fopen($FILENAME,"r");
+            $cityList = json_decode(fread($fp, filesize($FILENAME)),true);
+            //var_dump($cityList);
+           // echo array_search("上海", $cityList);
+           foreach ($cityList as $city){
+               if($city['city_name'] == '北京'){
+                   echo $city['city_code'];
+               }
+                  
+           }
+        }
+
+
+
+
+
+
     $x = 5985;
     var_dump($x);
     $x= -345;
